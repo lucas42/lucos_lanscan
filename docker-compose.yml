@@ -4,8 +4,3 @@ services:
       build: .
       container_name: lanscan
       image: lucas42/lucos_lanscan
-      volumes:
-        - reports:/var/lib/reports
-
-volumes:
-  reports:
