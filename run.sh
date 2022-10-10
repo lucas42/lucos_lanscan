@@ -46,5 +46,5 @@ do
 		fi
 		cp results.latest results.old
 		cp macaddresses.latest macaddresses.old
-	sleep 5
+	sleep 10
 done
