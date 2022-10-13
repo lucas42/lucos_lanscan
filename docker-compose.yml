@@ -1,6 +1,6 @@
 version: '3'
 services:
-    loganne:
+    lanscan:
       build: .
       container_name: lanscan
       image: lucas42/lucos_lanscan
