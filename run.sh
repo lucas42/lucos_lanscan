@@ -19,7 +19,7 @@ do
 					continue
 				fi
 				echo "$name ($mac) joined"
-				curl -X POST "https://loganne.l42.eu/events" --data "{
+				curl --silent -X POST "https://loganne.l42.eu/events" --data "{
 					\"type\": \"deviceJoined\",
 					\"source\": \"lucos_lanscan\",
 					\"humanReadable\": \"$name ($mac) joined the Local Area Network\",
@@ -40,7 +40,7 @@ do
 					continue
 				fi
 				echo "$name ($mac) left"
-				curl -X POST "https://loganne.l42.eu/events" --data "{
+				curl --silent -X POST "https://loganne.l42.eu/events" --data "{
 					\"type\": \"deviceJoined\",
 					\"source\": \"lucos_lanscan\",
 					\"humanReadable\": \"$name ($mac) left the Local Area Network\",
