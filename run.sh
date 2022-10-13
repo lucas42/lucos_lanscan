@@ -14,6 +14,10 @@ do
 			do
 				details=$(cat results.latest | grep "$mac")
 				IFS=", " read name mac ip <<< "$details"
+				if [ "$name" == "flichub" ] ; then
+					echo "Ignoring flichub change as they're noisy"
+					continue
+				fi
 				echo "$name ($mac) joined"
 				curl -X POST "https://loganne.l42.eu/events" --data "{
 					\"type\": \"deviceJoined\",
@@ -31,6 +35,10 @@ do
 			do
 				details=$(cat results.old | grep "$mac")
 				IFS=", " read name mac ip <<< "$details"
+				if [ "$name" == "flichub" ] ; then
+					echo "Ignoring flichub change as they're noisy"
+					continue
+				fi
 				echo "$name ($mac) left"
 				curl -X POST "https://loganne.l42.eu/events" --data "{
 					\"type\": \"deviceJoined\",
