@@ -4,6 +4,7 @@ do
 	curl --silent "http://192.168.1.254" |\
 		/root/.cargo/bin/htmlq --text '#frame_div > table:nth-child(6) td.bt_border:not(:first-child):not(:nth-child(5)):not(:nth-child(6))' |\
 		sed 's/$/,/g' |\
+		sed 's/ /_/g' |\
 		xargs -n3 |\
 		grep "192.168" |\
 		sed 's/,$//g' > results.latest
