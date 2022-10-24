@@ -4,3 +4,4 @@ services:
       build: .
       container_name: lanscan
       image: lucas42/lucos_lanscan
+      restart: always
