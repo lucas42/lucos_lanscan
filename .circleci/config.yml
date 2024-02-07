@@ -5,10 +5,8 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - lucos/build-arm:
-          context: docker
+      - lucos/build-arm
       - lucos/deploy-xwing:
-          context: docker
           requires:
             - lucos/build-arm
           filters:
