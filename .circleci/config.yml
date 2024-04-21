@@ -6,10 +6,3 @@ workflows:
   build-deploy:
     jobs:
       - lucos/build-arm
-      - lucos/deploy-xwing:
-          requires:
-            - lucos/build-arm
-          filters:
-            branches:
-              only:
-                - main
